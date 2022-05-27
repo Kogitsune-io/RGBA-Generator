@@ -1,0 +1,97 @@
+<!doctype html>
+<head>
+<meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+* {margin:0; padding:0;}
+html, body {max-width:100vw; display:flex-block; overflow-x:hidden !important;}
+body {font-family:sans-serif; font-size:1.25em;}
+section {max-width:92vw; height:auto; margin:0 auto; padding:50px 0 50px 0; top:0; position:relative; z-index:10;}
+#title {width:100vw; height:60px; padding:30px 0 30px 0; margin:0 0 0 0; vertical-align:middle; font-size:1.85em; font-family:Roboto; color:rgba(24,24,24, 0.75); background:rgba(24, 65, 61, 0.814); z-index:100;}
+.font-col {mix-blend-mode: difference;}
+.font-center {text-align: center;}
+.fade_loader {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.seperator{margin:50px 0 0 0;}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+</style>
+
+</head>
+<body>
+<script>
+	localStorage.setItem("main_title", "RANDOM RGBA LOADER");
+	var cached_title = localStorage.getItem("main_title");
+	var rand1 = Math.floor((Math.random() * 255) + 1);
+	var rand2 = Math.floor((Math.random() * 255) + 1);
+	var rand3 = Math.floor((Math.random() * 255) + 1);
+	var opacity = parseFloat((Math.random() * 1).toFixed(3) / 1.0);
+	document.write('<h1 id="title" class="font-center" style="background:rgba(' + rand1 + ',' + rand2 + ',' + rand3 + ',' + opacity +');"> ' + cached_title + '</h1>');
+</script>
+
+<section>
+	<h2>About the RGBA tool you see before you!</h2>
+	<p>This tool was designed out of curiosity in order to learn JavaScript, Created during college around Christmas & New Year holiday of 2018!</p>
+	<br>
+	<h3>Usage</h3>
+	<p>If you see a colour you'd like to use for any purpose, highlight it, copy it and paste the rgba() value into your own code!<br> 
+	Not seeing an RGBA colour you like, simply refresh the page and wait for more rainbow!</p>
+
+	<h2 class="seperator">Developer Credits</h2>
+	<a href="https://github.com/Cascade-Media">contact@cascade.media</a>
+</section>
+
+<script>
+
+function array_colors(item, index, array, rand1, rand2, rand3, opacity){
+	
+	document.write('<div class="fade_loader font-center" style="width:25%; padding:5% 0 5% 0; display:inline-grid; background:rgba(' + rand1 + ',' + rand2 + ',' + rand3 + ',' + opacity +');">');
+  	document.write('<b class="font-col">rgba</b>(' + rand1 + ', ' + rand2 + ', ' + rand3 + ', ' + opacity + ')'); console.log('ID:' + index + ' RGBA:' + rand1 + '' + rand2 + ',' + rand3 + ',' + opacity + '');
+  	document.write('</div>');
+	return;
+} 
+
+var min = 0;
+var max = 64;
+
+var array = [];
+
+for (min; min < max + 0; min++){
+	var rand_num = Math.floor(Math.random() * max);
+  	array.push(rand_num);
+
+  	array.forEach(function(item, index, array) {
+  		
+  		if (item >= 0){
+  			var col_min = 0;
+			var col_max = 64;
+  			for (col_min; col_min < col_max + 1; col_min++){
+				var rand1 = Math.floor((Math.random() * 255) + 1);
+				var rand2 = Math.floor((Math.random() * 255) + 1);
+				var rand3 = Math.floor((Math.random() * 255) + 1);
+				var opacity = parseFloat((Math.random() * 1).toFixed(3) / 1.0);
+				
+			}
+			array_colors(item, index, array, rand1, rand2, rand3, opacity);	
+  		}
+  		else {
+  			document.write('Error');
+  		}	
+
+	});
+}
+
+</script>
+
+
+</body>
+</html>
